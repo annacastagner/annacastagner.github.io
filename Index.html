@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Anna Castagner | Education student, leader, lifeguard</title>
+<meta name="description" content="Portfolio of Anna Castagner: McGill education student, aquatic team leader, swim instructor and dance teacher.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎪</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#C8102E; --ivory:#FFF4DA; --gold:#F5B82E; --ink:#1A1033; --teal:#12A594;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--body);background:var(--ivory);color:var(--ink);line-height:1.6;font-size:1.05rem}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 1.5rem}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05}
+h2{font-size:clamp(2rem,5vw,3.2rem);margin-bottom:1.5rem}
+section{padding:4.5rem 0}
+
+/* nav */
+nav{position:sticky;top:0;z-index:10;background:var(--ink);color:var(--ivory)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-top:.8rem;padding-bottom:.8rem;flex-wrap:wrap}
+nav b{font-family:var(--display);font-weight:400;font-size:1.1rem;color:var(--gold)}
+nav ul{display:flex;gap:1.2rem;list-style:none;padding:0;flex-wrap:wrap}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--gold)}
+
+/* hero: the one memorable thing is the big-top awning */
+.hero{position:relative;background:var(--red);color:var(--ivory);padding:0;overflow:hidden}
+.awning{height:70px;background:repeating-linear-gradient(90deg,var(--red) 0 60px,var(--ivory) 60px 120px);
+  -webkit-mask:radial-gradient(circle 30px at 30px 100%,#0000 98%,#000) 0 0/60px 100% repeat-x;mask:radial-gradient(circle 30px at 30px 100%,#0000 98%,#000) 0 0/60px 100% repeat-x;
+  -webkit-mask:none;mask:none;position:relative}
+.awning::after{content:"";position:absolute;left:0;right:0;bottom:-24px;height:24px;
+  background:radial-gradient(circle at 30px 0,var(--red) 29px,#0000 30px) 0 0/60px 24px repeat-x}
+.awning::before{content:"";position:absolute;inset:0;
+  background:repeating-linear-gradient(90deg,transparent 0 60px,rgba(26,16,51,.12) 60px 120px)}
+.hero-inner{background:repeating-linear-gradient(90deg,var(--red) 0 60px,#B30E29 60px 120px);padding:5rem 0 4.5rem;margin-top:-1px}
+.hero h1{font-size:clamp(3.4rem,13vw,9rem);color:var(--ivory);text-shadow:5px 5px 0 var(--ink)}
+.hero h1 span{display:block;color:var(--gold)}
+.hero p.lead{max-width:34rem;font-size:1.25rem;margin:1.8rem 0 2rem;background:var(--ink);padding:1rem 1.2rem;border-left:8px solid var(--gold)}
+.btn{display:inline-block;background:var(--gold);color:var(--ink);font-weight:700;padding:.9rem 1.6rem;border-radius:999px;text-decoration:none;border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--ink)}
+.btn.alt{background:var(--ivory);margin-left:.6rem}
+
+/* marquee */
+.marquee{background:var(--gold);color:var(--ink);border-block:4px solid var(--ink);overflow:hidden;white-space:nowrap}
+.marquee div{display:inline-block;padding:.8rem 0;font-family:var(--display);font-size:1.2rem;animation:slide 32s linear infinite}
+.marquee span{margin:0 1.4rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.marquee div{animation:none}html{scroll-behavior:auto}.btn{transition:none}}
+
+/* about */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:3rem;align-items:start}
+.about p+p{margin-top:1rem}
+.facts{background:var(--ink);color:var(--ivory);padding:1.6rem;border-radius:18px;box-shadow:8px 8px 0 var(--teal)}
+.facts h3{color:var(--gold);font-size:1.4rem;margin-bottom:.8rem}
+.facts ul{padding-left:1.1rem}
+.facts li{margin:.35rem 0}
+
+/* experience */
+.dark{background:var(--ink);color:var(--ivory)}
+.dark h2{color:var(--gold)}
+.role{display:grid;grid-template-columns:200px 1fr;gap:2rem;padding:2rem 0;border-top:3px dashed rgba(255,244,218,.35)}
+.role:first-of-type{border-top:0}
+.role .when{color:var(--gold);font-weight:700}
+.role h3{font-size:1.6rem;margin-bottom:.2rem}
+.role .org{color:var(--teal);font-weight:700;margin-bottom:.8rem;filter:brightness(1.4)}
+
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.6rem}
+.card{background:#fff;border:3px solid var(--ink);border-radius:20px;padding:1.6rem;box-shadow:6px 6px 0 var(--red)}
+.card:nth-child(2){box-shadow:6px 6px 0 var(--teal)}
+.card h3{font-size:1.4rem;margin-bottom:.3rem}
+.card .meta{font-weight:700;color:var(--red);margin-bottom:.6rem}
+.chips{display:flex;flex-wrap:wrap;gap:.6rem;list-style:none;padding:0}
+.chips li{background:#fff;border:3px solid var(--ink);border-radius:999px;padding:.4rem 1rem;font-weight:500}
+.chips li small{color:#5b5270}
+
+/* contact */
+.contact{background:var(--red);color:var(--ivory);text-align:center}
+.contact h2{color:var(--ivory);text-shadow:4px 4px 0 var(--ink)}
+.contact .big{display:block;font-family:var(--display);font-size:clamp(1.3rem,4.5vw,2.4rem);color:var(--gold);text-decoration:none;margin:.5rem 0;overflow-wrap:anywhere}
+.contact .big:hover{text-decoration:underline}
+footer{background:var(--ink);color:var(--ivory);text-align:center;padding:1.5rem;font-size:.9rem}
+
+@media (max-width:760px){
+  .about,.role{grid-template-columns:1fr;gap:1rem}
+  .btn.alt{margin:.8rem 0 0}
+  section{padding:3.2rem 0}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <b>Anna Castagner</b>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#volunteer">Volunteer</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="awning" aria-hidden="true"></div>
+  <div class="hero-inner">
+    <div class="wrap">
+      <h1>Anna <span>Castagner</span></h1>
+      <p class="lead">McGill education student who keeps a pool deck, a dance studio and a student council running smoothly, and stays calm when it counts.</p>
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn alt" href="#experience">See my experience</a>
+    </div>
+  </div>
+</header>
+
+<div class="marquee" aria-hidden="true">
+  <div>
+    <span>Leadership</span><span>★</span><span>Communication</span><span>★</span><span>Lifeguard</span><span>★</span><span>Swim Instructor</span><span>★</span><span>Dance Teacher</span><span>★</span><span>Customer Service</span><span>★</span><span>Organization</span><span>★</span><span>Spanish</span><span>★</span>
+    <span>Leadership</span><span>★</span><span>Communication</span><span>★</span><span>Lifeguard</span><span>★</span><span>Swim Instructor</span><span>★</span><span>Dance Teacher</span><span>★</span><span>Customer Service</span><span>★</span><span>Organization</span><span>★</span><span>Spanish</span><span>★</span>
+  </div>
+</div>
+
+<main>
+<section id="about">
+  <div class="wrap about">
+    <div>
+      <h2>About me</h2>
+      <p>I'm an enthusiastic, personable quick-learner who values human connection through conversation and community. I work well on a team, handle long days with a positive attitude, and give people excellent service.</p>
+      <p>I'm studying at McGill with a focus on global systems, education and business. After my undergraduate degree, I plan to pursue a master's in Global Finance and build a career in international affairs, business and finance.</p>
+    </div>
+    <aside class="facts">
+      <h3>What I bring</h3>
+      <ul>
+        <li>Multi-tasking and time management</li>
+        <li>Takes initiative, proactive and innovative</li>
+        <li>Highly responsible and organized</li>
+        <li>Flexible across many types of work</li>
+        <li>Basic conversational Spanish</li>
+      </ul>
+    </aside>
+  </div>
+</section>
+
+<section id="experience" class="dark">
+  <div class="wrap">
+    <h2>Work experience</h2>
+
+    <article class="role">
+      <div class="when">Aug 2024 to Aug 2026</div>
+      <div>
+        <h3>Aquatic Team Leader, Swim Instructor and Lifeguard</h3>
+        <p class="org">Ron Edwards YMCA</p>
+        <p>Acted as Head Guard during swimming lessons: checked in swimmers, supervised and supported instructors, responded to emergencies and pool fouling incidents, and approved report cards. I prepared and cleaned the pool area before and after lessons, taught large classes of beginner swimmers, and worked lifeguard shifts of up to 10 hours. This role built my leadership, safety and crisis-management skills.</p>
+      </div>
+    </article>
+
+    <article class="role">
+      <div class="when">Sep 2023 to Jun 2024</div>
+      <div>
+        <h3>Dance Teacher / Assistant</h3>
+        <p class="org">Hamilton School of Dance</p>
+        <p>Taught and assisted classes of multiple kids for 3 to 6 hours at a time. I prepared and distributed class schedules and information, kept the classroom and office organized, handled payments with discretion, and answered client and colleague questions on behalf of the studio owner.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <h2>Education</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>McGill University</h3>
+        <p class="meta">Bachelor of Arts in Education, Global Contexts</p>
+        <p>Currently a U0 student with plans to minor in Management. Next goal: a master's in Global Finance.</p>
+      </article>
+      <article class="card">
+        <h3>St. Mary Catholic Secondary School</h3>
+        <p class="meta">Business Specialist High Skills Major</p>
+        <p>Honour Roll all four years, 150+ volunteer hours, and Student Council President. Co-op as Assistant Event Coordinator at Green Venture. Graduated with the St. Mary Student Council Award and the P.J. Daly Memorial Award.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="volunteer" style="padding-top:0">
+  <div class="wrap">
+    <h2>Volunteer work</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>Costa Rica Service Trip</h3>
+        <p class="meta">Global Leadership Adventures, Aug 2024</p>
+        <p>Joined beach clean-ups to protect nesting sea turtles and worked on ecosystem restoration projects. I also strengthened my Spanish through conversations with local community members.</p>
+      </article>
+      <article class="card">
+        <h3>Dominican Republic Mission Trip</h3>
+        <p class="meta">D.R.E.A.M.S., Mar 2025</p>
+        <p>Helped build a home for a family in need and donated clothing and equipment to the local community, gaining a deeper understanding of the economic challenges communities face.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="certs" style="padding-top:0">
+  <div class="wrap">
+    <h2>Certifications</h2>
+    <ul class="chips">
+      <li>Standard First Aid CPR/AED Level C <small>May 2024</small></li>
+      <li>National Lifeguard <small>Aug 2024</small></li>
+      <li>Swim Instructor <small>Sep 2024</small></li>
+      <li>Customer Service <small>Feb 2026</small></li>
+      <li>Innovation, Creativity and Entrepreneurship (ICE) <small>Feb 2026</small></li>
+      <li>Worker Health and Safety Awareness in 4 Steps <small>Feb 2026</small></li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <h2>Let's talk</h2>
+    <p>Hiring, collaborating, or just saying hello? Reach me here.</p>
+    <a class="big" href="mailto:anna.castagner@icloud.com">anna.castagner@icloud.com</a>
+    <a class="big" href="tel:+12896599885">+1 (289) 659-9885</a>
+  </div>
+</section>
+</main>
+
+<footer>&copy; 2026 Anna Castagner</footer>
+
+</body>
+</html>
